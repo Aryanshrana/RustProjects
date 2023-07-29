@@ -54,12 +54,16 @@ fn control_flow() {
         .read_line(&mut decision)
         .expect("failed to read input");
     
-    let mut condition: bool = false;
+    let mut condition: bool;
     if decision == "true" {
         condition = true;
     }
-    else {
+    else if decision == "false"{
         condition = false;
+    }
+    else {
+        println!("error occured in taking decision");
+        return;
     }
     let value = if condition {5} else {7};
 
@@ -67,5 +71,24 @@ fn control_flow() {
     
 }
 fn control_flow2() {
-    
+    let mut counter = 0;
+    let result = loop {
+        counter += 1;
+        if counter == 12 {
+            break counter * 2;
+        }
+    };
+    println!("the value we get of result is:  {result}");
+    // looping through a collection
+    let a: [i32;5] = [10,20,30,40,50];
+    let mut count = 0;
+    while count < 5 {
+        println!("the value of index {count} is: {}",a[count]);
+        count+=1;
+    }
+    //using for loop
+    for number in (1..4).rev() { // rev means it takse values in reverse order 
+        println!("{number}!");
+    }
+    println!("TakeOff!!!");
 }
