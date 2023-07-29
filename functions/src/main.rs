@@ -18,6 +18,7 @@ fn main() {
 
     // we have understood expressions and functions ; here we are introducing control flow with another function
     control_flow();
+    control_flow2();
 
 }
 fn another_function(x: &str) {
@@ -46,5 +47,25 @@ fn control_flow() {
         println!("Hello Shubham");
     }
 
-}
+    //using let and if
+    let mut decision = String::new();
+    println!("Enter decision as true or false");
+    io::stdin()
+        .read_line(&mut decision)
+        .expect("failed to read input");
+    
+    let mut condition: bool = false;
+    if decision == "true" {
+        condition = true;
+    }
+    else {
+        condition = false;
+    }
+    let value = if condition {5} else {7};
 
+    println!("The value we get is {value}");
+    
+}
+fn control_flow2() {
+    
+}
